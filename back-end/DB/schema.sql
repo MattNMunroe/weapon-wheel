@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS weapon wheel;
-CREATE DATABASE weapon wheel; 
+DROP DATABASE IF EXISTS weapon_wheel;
+CREATE DATABASE weapon_wheel; 
 
-\c weapon wheel; 
+\c weapon_wheel; 
 
 CREATE TABLE weapon (
     id SERIAL PRIMARY KEY,

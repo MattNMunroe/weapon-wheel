@@ -1,4 +1,4 @@
-\c weapon wheel; 
+\c weapon_wheel; 
 
 INSERT INTO weapon (name, origin, is_referenced, notable_wielder, description, image) VALUES
 ('Cerebral Bore', 'Turok 2: Seeds of Evil', false, true, 'A hand-sized cannon that launches drilling probes directly into the cranium of the target before exploding.', 'https://static.wikia.nocookie.net/turok/images/0/03/T2CerebralBore.jpg/revision/latest/smart/width/250/height/250?cb=20170321025011'),

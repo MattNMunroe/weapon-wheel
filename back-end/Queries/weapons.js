@@ -1,4 +1,4 @@
-const db = require("../db/dbConfig.js");
+const db = require("../DB/dbConfig.js");
 
 const getAllWeapons = async () => {
   try {
