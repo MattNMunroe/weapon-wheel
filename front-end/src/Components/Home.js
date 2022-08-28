@@ -12,6 +12,7 @@ function Home (props) {
       <h3>Create Account</h3> <h3>Login</h3>
       <br></br>
         <Link to='/weapons'>The Armoury</Link>
+        <br></br>
     </div>
   );
 }
