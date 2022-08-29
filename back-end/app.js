@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const express = require("express");
 const cors = require("cors");
-const weaponsControllers = require("./controllers/weaponsController");
+const weaponsControllers = require("./Controllers/weaponsController");
 
 // CONFIGURATION
 const app = express();
