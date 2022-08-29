@@ -52,14 +52,85 @@ function EditWeapon() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateWeapon(weapon, id)
-  }
+    updateWeapon(weapon, id);
+  };
 
   return (
-    <div>
-        Start Here!
+    <div className="Edit">
+      <div>
+        <h5>Edit Weapon</h5>
+        <br></br>
+        <form onSubmit={handleSubmit} id="edit-form">
+          <label htmlFor="name">Weapon Name: </label>
+          <br></br>
+          <input
+            id="name"
+            value={`${weapon.name}`}
+            type="text"
+            onChange={handleTextChange}
+            required
+          />
+          <br></br>
+          <label htmlFor="origin">Weapon's Origins: </label>
+          <br></br>
+          <input
+            id="origin"
+            value={`${weapon.origin}`}
+            type="text"
+            onChange={handleTextChange}
+            required
+          />
+          <br></br>
+          <label htmlFor="reference">
+            Is this Weapon referenced anywhere else, like a movie, or a book?
+          </label>
+          <br></br>
+          <input
+            id="reference"
+            value={`${weapon.is_referenced}`}
+            type="checkbox"
+            onChange={handleCheckbox}
+          />
+          <br></br>
+          <label htmlFor="wielder">
+            Does this Weapon have a known wielder?
+          </label>
+          <br></br>
+          <input
+            id="notable-wielder"
+            value={`${weapon.notable_wielder}`}
+            type="checkbox"
+            onChange={handleCheckbox}
+          />
+          <br></br>
+          <label htmlFor="description">Description: </label>
+          <br></br>
+          <input
+            id="description"
+            type="text"
+            value={`${weapon.description}`}
+            onChange={handleCheckbox}
+            required
+          />
+          <br></br>
+          <label htmlFor="image">Image: </label>
+          <br></br>
+          <input
+            id="image"
+            type="text"
+            name="weapon-picture"
+            value={`${weapon.image}`}
+            onChange={handleTextChange}
+          />
+          <br></br>
+          <input type="submit" />
+        </form>
+        <Link to={`/weapons/${id}`}>
+          <button className="back">{`Back to ${weapon.name}`}</button>
+        </Link>
+      </div>
     </div>
-  )
+  );
 }
 
 export default EditWeapon;

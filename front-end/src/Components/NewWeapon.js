@@ -45,6 +45,7 @@ function NewWeapon() {
       <div>
         <h4>Enter a New Weapon</h4>
         <h3>New entries will be vetted by Moderators.</h3>
+        <h3>Please include any references and notable wielders in your description, should there be any.</h3>
       </div>
       <form onSubmit={handleSubmit} className="form">
         <label htmlFor="name">Weapon Name:</label>
@@ -62,7 +63,7 @@ function NewWeapon() {
           id="origin"
         />
         <label htmlFor="reference">
-          Is this Weapon referenced anywhere else?
+          Is this Weapon referenced anywhere else, like a movie, or a book?
         </label>
         <input
           type="checkbox"
