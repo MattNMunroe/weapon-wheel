@@ -7,6 +7,8 @@ import Home from "./Components/Home";
 import WeaponIndex from "./Components/WeaponIndex";
 import SearchBar from "./Components/Search";
 import NewWeapon from "./Components/NewWeapon";
+import ShowWeapon from "./Components/ShowWeapon";
+import EditWeapon from "./Components/EditWeapon";
 
 function App() {
 
@@ -16,7 +18,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/weapons' element={<WeaponIndex/>}/>
+          <Route path='/weapons/:id' element={<ShowWeapon/>}/>
           <Route path='/weapons/new' element={<NewWeapon/>}/>
+          <Route path='/weapons/:id/edit' element={<EditWeapon/>}/>
         </Routes>
       </Router>
     </div>
