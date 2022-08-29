@@ -6,7 +6,7 @@ const {
     deleteWeapon,
     createWeapon,
     updateWeapon,
-  } = require("../queries/weapons");
+  } = require("../Queries/weapons");
   const { checkName, nameFormatter } = require("../Validations/checkWeapons");
 
 
