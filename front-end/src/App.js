@@ -11,7 +11,9 @@ import ShowWeapon from "./Components/ShowWeapon";
 import EditWeapon from "./Components/EditWeapon";
 
 function App() {
-
+//establish a feed component
+//user information for db (refer to Antonio's thing)
+//PsuedoProfilePage
   return (
     <div>
       <Router>

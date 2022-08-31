@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const weaponsControllers = require("./Controllers/weaponsController");
-
+const userControllers = require("./Controllers/userControllers");
 // CONFIGURATION
 const app = express();
 
@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/weapons", weaponsControllers);
+app.use("/user", userControllers);
 
 // ROUTES
 app.get("/", (req, res) => {

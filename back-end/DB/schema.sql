@@ -12,3 +12,10 @@ CREATE TABLE weapon (
     description TEXT,
     image TEXT
 );
+
+CREATE TABLE user (
+    id PRIMARY,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL,
+    email TEXT
+);
