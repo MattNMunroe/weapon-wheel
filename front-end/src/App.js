@@ -9,9 +9,10 @@ import SearchBar from "./Components/Search";
 import NewWeapon from "./Components/NewWeapon";
 import ShowWeapon from "./Components/ShowWeapon";
 import EditWeapon from "./Components/EditWeapon";
+import SignUp from "./Components/SignUp";
+import UserLogin from "./Components/UserLogin"
 
 function App() {
-//establish a feed component
 //user information for db (refer to Antonio's thing)
 //PsuedoProfilePage
   return (
@@ -23,6 +24,8 @@ function App() {
           <Route path='/weapons/:id' element={<ShowWeapon/>}/>
           <Route path='/weapons/new' element={<NewWeapon/>}/>
           <Route path='/weapons/:id/edit' element={<EditWeapon/>}/>
+          <Route path='/user/new' element={<SignUp/>}/>
+          <Route path='/user/login' element={<UserLogin/>}/>
         </Routes>
       </Router>
     </div>

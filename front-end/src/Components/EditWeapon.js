@@ -64,7 +64,8 @@ function EditWeapon() {
           <label htmlFor="name">Weapon Name: </label>
           <br></br>
           <input
-            id="name"
+            name="name"
+            id='name'
             value={`${weapon.name}`}
             type="text"
             onChange={handleTextChange}
@@ -74,7 +75,8 @@ function EditWeapon() {
           <label htmlFor="origin">Weapon's Origins: </label>
           <br></br>
           <input
-            id="origin"
+            name="origin"
+            id='origin'
             value={`${weapon.origin}`}
             type="text"
             onChange={handleTextChange}
@@ -86,7 +88,7 @@ function EditWeapon() {
           </label>
           <br></br>
           <input
-            id="reference"
+            name="reference"
             value={`${weapon.is_referenced}`}
             type="checkbox"
             onChange={handleCheckbox}
@@ -97,7 +99,7 @@ function EditWeapon() {
           </label>
           <br></br>
           <input
-            id="notable-wielder"
+            name="notable-wielder"
             value={`${weapon.notable_wielder}`}
             type="checkbox"
             onChange={handleCheckbox}
@@ -106,10 +108,11 @@ function EditWeapon() {
           <label htmlFor="description">Description: </label>
           <br></br>
           <input
-            id="description"
+            id='description'
             type="text"
+            name='description'
             value={`${weapon.description}`}
-            onChange={handleCheckbox}
+            onChange={handleTextChange}
             required
           />
           <br></br>

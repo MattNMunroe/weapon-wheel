@@ -9,7 +9,7 @@ function Home (props) {
       <br></br>
       <h4>Returning users, please Login!</h4>
       <br></br>
-      <h3>Create Account</h3> <h3>Login</h3>
+      <Link to='/user/new'><h3>Create Account</h3></Link> <Link to='/user/login'><h3>Login</h3></Link>
       <br></br>
         <Link to='/weapons'>The Armoury</Link>
         <br></br>

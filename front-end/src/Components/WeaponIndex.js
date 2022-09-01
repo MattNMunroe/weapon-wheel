@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import SearchBar from "./Search";
 
 const WeaponIndex = (props) => {
+  const loggedInUser = localStorage.getItem("username")
   const [weapons, setWeapons] = useState([]);
   const { id } = useParams();
 

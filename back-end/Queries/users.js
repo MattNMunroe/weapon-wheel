@@ -2,7 +2,7 @@ const db = require("../DB/dbConfig.js");
 
 const getAllUsers = async () => {
   try {
-    const allUsers = await db.any("SELECT * FROM user");
+    const allUsers = await db.any("SELECT * FROM users");
     return allUsers;
   } catch (error) {
     return error;
@@ -11,17 +11,27 @@ const getAllUsers = async () => {
 
 const getUser = async (id) => {
   try {
-    const oneUser = await db.one("SELECT * FROM user WHERE id=$1", id);
+    const oneUser = await db.one("SELECT * FROM users WHERE id=$1", id);
     return oneUser;
   } catch (error) {
     return error;
   }
 };
 
+const getUserInformation = async (username) => {
+  try {
+    const loggedUser = await db.one("SELECT * FROM users WHERE username=$1", username)
+    return loggedUser;
+  } catch (error) {
+    console.log(error.message || error);
+    return null
+  }
+}
+
 const deleteUser = async (id) => {
   try {
     const oneUser = await db.one(
-      "DELETE FROM user WHERE id=$1 RETURNING *",
+      "DELETE FROM users WHERE id=$1 RETURNING *",
       id
     );
     return oneUser;
@@ -38,7 +48,7 @@ const createUser = async ({
 }) => {
   try {
     const newUser = await db.one(
-      "INSERT INTO user (username, password, email) VALUES($1, $2, $3,) RETURNING *",
+      "INSERT INTO users (username, password, email) VALUES($1, $2, $3) RETURNING *",
       [username, password, email ]
     );
     return newUser;
@@ -53,7 +63,7 @@ const updateUser = async (
 ) => {
   try {
     const updateUser = await db.one(
-      "UPDATE user SET username=$1, password=$2, email=$3, where id=$4 RETURNING *",
+      "UPDATE users SET username=$1, password=$2, email=$3, where id=$4 RETURNING *",
       [username, password, email, id]
     );
     return updateUser;
@@ -69,4 +79,5 @@ module.exports = {
   deleteUser,
   createUser,
   updateUser,
+  getUserInformation,
 };
