@@ -6,7 +6,6 @@ import SearchBar from "./Search";
 const WeaponIndex = (props) => {
   const loggedInUser = localStorage.getItem("username")
   const [weapons, setWeapons] = useState([]);
-  const { id } = useParams();
 
   useEffect(() => {
     const API = process.env.REACT_APP_API_URL;
@@ -18,7 +17,7 @@ const WeaponIndex = (props) => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [loggedInUser]);
   console.log(weapons);
 
   const handleSearch = (search) => {
@@ -35,6 +34,7 @@ const WeaponIndex = (props) => {
     <div className="weapons-list">
       <SearchBar weapons={weapons} handleSearch={handleSearch} />
       <h1>The Armoury</h1>
+      <h3>User: {props.loggedIn}</h3>
       <Link to="/weapons/new">New Weapon</Link>
       {weapons.map((weapon, index) => {
         return (

@@ -1,11 +1,12 @@
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-function NewWeapon() {
+function NewWeapon(props) {
+  const loggedInUser = localStorage.getItem("username");
   const navigate = useNavigate();
   const [weapon, setWeapon] = useState({
     name: "",
@@ -15,6 +16,19 @@ function NewWeapon() {
     description: "",
     image: "",
   });
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+  });
+
+  useEffect(() => {
+    axios.get(`${API}/user`, loggedInUser).then((response) => {
+      setUser(loggedInUser)
+      .catch((error) => {
+        console.log(error)
+      })
+    });
+  }, [loggedInUser]);
 
   const handleTextChange = (event) => {
     setWeapon({ ...weapon, [event.target.id]: event.target.value });
@@ -42,10 +56,14 @@ function NewWeapon() {
   };
   return (
     <div className="form">
+      <h3>User: {props.loggedIn}</h3>
       <div>
         <h4>Enter a New Weapon</h4>
         <h3>New entries will be vetted by Moderators.</h3>
-        <h3>Please include any references and notable wielders in your description, should there be any.</h3>
+        <h3>
+          Please include any references and notable wielders in your
+          description, should there be any.
+        </h3>
       </div>
       <form onSubmit={handleSubmit} className="form">
         <label htmlFor="name">Weapon Name:</label>

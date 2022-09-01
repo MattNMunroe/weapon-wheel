@@ -4,7 +4,6 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 function SignUp() {
-  const loggedInUser = localStorage.getItem("username")
   const navigate = useNavigate();
   const [user, setUser] = useState({
     username: "",

@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Login = ({ handleSignin, handleSigninClose }) => {
+const Login = ({ handleSignin, handleSigninClose, }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,8 +30,10 @@ const Login = ({ handleSignin, handleSigninClose }) => {
       .then((response) => {
         console.log(response)
         localStorage.setItem("username", response.data.payload.username)
+        navigate('/')
       });
   };
+
   return (
     <section className="signin">
       <form onSubmit={handleSubmit}>

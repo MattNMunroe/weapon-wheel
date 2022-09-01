@@ -1,10 +1,13 @@
 import React from "react";
-import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 
 function Home (props) {
+  const loggedInUser = localStorage.getItem("username")
   return (
     <div>
+      <h2>User: {props.loggedIn}</h2>
       <h1>Welcome to Weapon Wheel!</h1>
       <br></br>
       <h4>Returning users, please Login!</h4>

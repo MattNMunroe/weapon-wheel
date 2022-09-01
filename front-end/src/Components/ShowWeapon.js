@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const ShowWeapon = () => {
+const ShowWeapon = (props) => {
+  const loggedInUser = localStorage.getItem("username")
   const [weapon, setWeapon] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const ShowWeapon = () => {
     axios.get(`${API}/weapons/${id}`).then((response) => {
       setWeapon(response.data.payload);
     });
-  }, [id, navigate, API]);
+  }, [id, navigate, API, loggedInUser]);
 
   const deleteWeapon = () => {
     axios.delete(`${API}/weapons/${id}`)
@@ -34,6 +35,7 @@ const ShowWeapon = () => {
 
 return (
     <div>
+      <h3>User: {props.loggedIn}</h3>
         <h5>{name}</h5>
         <h4>
             {description}
