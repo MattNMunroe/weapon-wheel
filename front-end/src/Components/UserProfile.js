@@ -15,19 +15,20 @@ const UserProfile = (props) => {
   useEffect(() => {
     const API = process.env.REACT_APP_API_URL;
     axios
-      .get(`${API}/user`)
+      .get(`${API}/user`,)
       .then((response) => {
         setUser(loggedInUser);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
   console.log(user);
+  console.log(props.loggedIn)
 
   return (
     <div>
-      <h3>User: {user}</h3>
+      <h3>User: {props.loggedIn}</h3>
     </div>
   );
 };

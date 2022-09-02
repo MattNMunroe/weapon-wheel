@@ -1,0 +1,9 @@
+img {
+    mix-blend-mode:normal;
+    border: 10px solid;
+}
+
+label {
+    font-size: larger;
+    color:aliceblue
+}

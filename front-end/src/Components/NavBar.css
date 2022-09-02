@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    background-color: rgb(220, 164, 50);
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 3em 1em 3em;
+    margin-bottom: 1em;
+    background-image: url(https://i.pinimg.com/originals/cd/a3/82/cda3820d079f7a40e51f81c134fb91b8.png);
+    background-position: center;
+    background-size: 250px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(238, 75, 53);
+}

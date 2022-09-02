@@ -60,7 +60,7 @@ function EditWeapon(props) {
     <div className="Edit">
       <div>
         <h5>Edit Weapon</h5>
-        <h3>User: {props.loggedIn}</h3>
+        <h3>User: {props.loggedIn.username}</h3>
         <br></br>
         <form onSubmit={handleSubmit} id="edit-form">
           <label htmlFor="name">Weapon Name: </label>

@@ -2,10 +2,12 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import SearchBar from "./Search";
+import './WeaponIndex.css'
 
 const WeaponIndex = (props) => {
   const loggedInUser = localStorage.getItem("username")
   const [weapons, setWeapons] = useState([]);
+  const [favorite, setFavorite] = useState(false)
 
   useEffect(() => {
     const API = process.env.REACT_APP_API_URL;
@@ -20,12 +22,16 @@ const WeaponIndex = (props) => {
   }, [loggedInUser]);
   console.log(weapons);
 
+  const handleCheckboxChange = () => {
+    setFavorite(!favorite);
+  };
+
   const handleSearch = (search) => {
     //take what was typed (input)
     //go through weapons list for match
     //filter by weapon.name
     const filteredWeapons = weapons.filter((weapon, index) => {
-      return weapon.name === search;
+      return weapon.name.toLowerCase() === search.toLowerCase();
     });
     setWeapons(filteredWeapons);
   };
@@ -50,6 +56,13 @@ const WeaponIndex = (props) => {
             <h3> Reference: {weapon.is_referenced ? "Yes" : "No"}</h3>
             <h3> Notable Wielder: {weapon.notable_wielder ? "Yes" : "No"}</h3>
             <h2> Description: {weapon.description}</h2>
+            <label htmlFor="favorite">Favorite?</label>
+            <input
+          id="favorite"
+          type="checkbox"
+          onChange={handleCheckboxChange}
+          checked={favorite}
+        />
           </div>
         );
       })}

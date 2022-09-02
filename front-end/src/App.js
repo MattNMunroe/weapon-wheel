@@ -52,14 +52,14 @@ function App() {
       <Router>
         <NavBar/>
         <Routes>
-          <Route path="/" element={<Home loggedIn={loggedInStatus.user} />} />
-          <Route path="/weapons" element={<WeaponIndex loggedIn={loggedInStatus.user}/>} />
-          <Route path="/weapons/:id" element={<ShowWeapon loggedIn={loggedInStatus.user}/>} />
-          <Route path="/weapons/new" element={<NewWeapon loggedIn={loggedInStatus.user}/>} />
-          <Route path="/weapons/:id/edit" element={<EditWeapon loggedIn={loggedInStatus.user}/>} />
+          <Route path="/" element={<Home loggedIn={loggedInUser} />} />
+          <Route path="/weapons" element={<WeaponIndex loggedIn={loggedInUser}/>} />
+          <Route path="/weapons/:id" element={<ShowWeapon loggedIn={loggedInUser}/>} />
+          <Route path="/weapons/new" element={<NewWeapon loggedIn={loggedInUser}/>} />
+          <Route path="/weapons/:id/edit" element={<EditWeapon loggedIn={loggedInUser}/>} />
           <Route path="/user/new" element={<SignUp/>} />
           <Route path="/user/login" element={<UserLogin/>} />
-          <Route path="/user/:id" element={<UserProfile loggedIn={loggedInStatus.user}/>}/>
+          <Route path="/user/:id" element={<UserProfile loggedIn={loggedInUser}/>}/>
         </Routes>
       </Router>
     </div>

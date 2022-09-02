@@ -3,6 +3,7 @@ import React from "react";
 import SearchBar from "./Search";
 import { useState, useEffect} from 'react'
 import axios from "axios";
+import './NavBar.css'
 const API = process.env.REACT_APP_API_URL
 
 const Nav = () => {
@@ -13,7 +14,7 @@ const Nav = () => {
       </Link>
       <br></br>
       <Link className="nav-link" to="/user/login">
-        <button href="/snacks/new">Login</button>
+        <button>Login</button>
       </Link>
       <br></br>
       <Link to='/weapons'><button>The Armoury</button></Link>
