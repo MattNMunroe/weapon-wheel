@@ -19,13 +19,20 @@ function EditWeapon(props) {
   const handleTextChange = (event) => {
     setWeapon({ ...weapon, [event.target.id]: event.target.value });
   };
-  const handleCheckbox = () => {
+  
+  const handleWielder = () => {
     setWeapon({
       ...weapon,
-      is_referenced: !weapon.is_referenced,
       notable_wielder: !weapon.notable_wielder,
     });
   };
+
+  const handleReference = () => {
+    setWeapon({
+      ...weapon,
+      is_referenced: !weapon.is_referenced
+    })
+  }
 
   useEffect(() => {
     axios
@@ -91,7 +98,7 @@ function EditWeapon(props) {
             name="reference"
             value={`${weapon.is_referenced}`}
             type="checkbox"
-            onChange={handleCheckbox}
+            onChange={handleReference}
           />
           <br></br>
           <label htmlFor="wielder">
@@ -102,7 +109,7 @@ function EditWeapon(props) {
             name="notable-wielder"
             value={`${weapon.notable_wielder}`}
             type="checkbox"
-            onChange={handleCheckbox}
+            onChange={handleWielder}
           />
           <br></br>
           <label htmlFor="description">Description: </label>

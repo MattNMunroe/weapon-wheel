@@ -22,14 +22,13 @@ function NewWeapon(props) {
   });
 
   useEffect(() => {
-    axios.get(`${API}/user`, loggedInUser).then((response) => {
+    axios.get(`${API}/user`).then((response) => {
       setUser(loggedInUser)
       .catch((error) => {
         console.log(error)
       })
     });
   }, [loggedInUser]);
-console.log(user)
 
   const handleTextChange = (event) => {
     setWeapon({ ...weapon, [event.target.id]: event.target.value });
