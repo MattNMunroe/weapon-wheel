@@ -4,8 +4,6 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 const API = process.env.REACT_APP_API_URL;
 
 function EditWeapon(props) {
-  const loggedInUser = localStorage.getItem("username")
-  //mod-locked/password locked
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -60,7 +58,7 @@ function EditWeapon(props) {
     <div className="Edit">
       <div>
         <h5>Edit Weapon</h5>
-        <h3>User: {props.loggedIn.username}</h3>
+        <h3>User: {props.loggedIn}</h3>
         <br></br>
         <form onSubmit={handleSubmit} id="edit-form">
           <label htmlFor="name">Weapon Name: </label>

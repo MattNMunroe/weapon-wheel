@@ -62,7 +62,7 @@ const Login = ({ handleSignin, handleSigninClose, }) => {
           required
         />
         <br></br>
-        <button type="submit">Sign In</button>
+        <button type="Submit">Sign In</button>
       </form>
     </section>
   );

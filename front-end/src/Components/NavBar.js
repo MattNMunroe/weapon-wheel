@@ -1,10 +1,6 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
-import SearchBar from "./Search";
-import { useState, useEffect} from 'react'
-import axios from "axios";
 import './NavBar.css'
-const API = process.env.REACT_APP_API_URL
 
 const Nav = () => {
   return (
@@ -21,7 +17,6 @@ const Nav = () => {
       <br></br>
       <Link to='/weapons/new'><button>New Weapon</button></Link>
       <br></br>
-      <Link to='/user/:id'><button>View Profile</button></Link>
     </nav>
   );
 };

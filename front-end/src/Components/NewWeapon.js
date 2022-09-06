@@ -29,6 +29,7 @@ function NewWeapon(props) {
       })
     });
   }, [loggedInUser]);
+console.log(user)
 
   const handleTextChange = (event) => {
     setWeapon({ ...weapon, [event.target.id]: event.target.value });
@@ -59,7 +60,6 @@ function NewWeapon(props) {
       <h3>User: {props.loggedIn}</h3>
       <div>
         <h4>Enter a New Weapon</h4>
-        <h3>New entries will be vetted by Moderators.</h3>
         <h3>
           Please include any references and notable wielders in your
           description, should there be any.
@@ -73,6 +73,7 @@ function NewWeapon(props) {
           onChange={handleTextChange}
           id="name"
         />
+        <br></br>
         <label htmlFor="origin">Weapon's Origins:</label>
         <input
           type="text"
@@ -80,6 +81,7 @@ function NewWeapon(props) {
           onChange={handleTextChange}
           id="origin"
         />
+        <br></br>
         <label htmlFor="reference">
           Is this Weapon referenced anywhere else, like a movie, or a book?
         </label>
@@ -89,6 +91,7 @@ function NewWeapon(props) {
           onClick={handleCheckbox}
           id="reference"
         />
+        <br></br>
         <label htmlFor="wielder">Does this Weapon have a known wielder?</label>
         <input
           type="checkbox"
@@ -96,6 +99,7 @@ function NewWeapon(props) {
           onClick={handleCheckbox}
           id="notable-wielder"
         />
+        <br></br>
         <label htmlFor="description">Description:</label>
         <input
           type="text"
@@ -103,6 +107,7 @@ function NewWeapon(props) {
           onChange={handleTextChange}
           id="description"
         />
+        <br></br>
         <label htmlFor="image">Image:</label>
         <input
           type="text"
@@ -113,7 +118,7 @@ function NewWeapon(props) {
           placeholder="Place Image Link Here..."
         />
         <br></br>
-        <input type="submit" value="submit" />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );

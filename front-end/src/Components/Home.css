@@ -1,13 +1,6 @@
-div {
-    font-family: fantasy;
-    font-size: large;
-    text-align: center;
-    background-image: url(https://preview.redd.it/ss9v46i01za91.png?auto=webp&s=187fc5c8119d49bd78d5bf2bb7ce55c2a0b16449);
+.Home-Screen {
+    background-image: url(https://oyster.ignimgs.com/mediawiki/apis.ign.com/horizon-zero-dawn/e/e7/HZD_WeaponWheel.gif);
+    background-position: center;
     background-repeat: no-repeat;
-    background-position: center, fixed;
     background-size: cover;
-}
-
-h1, h2, h3, h4 {
-    color: aliceblue;
 }

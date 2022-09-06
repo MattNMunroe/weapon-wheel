@@ -2,11 +2,10 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams} from "react-router-dom";
 const loggedInUser = localStorage.getItem(`username`);
 
 const UserProfile = (props) => {
-  const navigate = useNavigate();
   const { id } = useParams();
   const [user, setUser] = useState({
     username: "",
@@ -15,22 +14,20 @@ const UserProfile = (props) => {
   useEffect(() => {
     const API = process.env.REACT_APP_API_URL;
     axios
-      .get(`${API}/user`,)
+      .get(`${API}/user`)
       .then((response) => {
         setUser(loggedInUser);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [id]);
+  }, [id,]);
   console.log(user);
-  console.log(props.loggedIn)
+  console.log(props.weapons);
 
   return (
-    <div>
-      <h3>User: {props.loggedIn}</h3>
-    </div>
-  );
+    <div></div>
+  )
 };
 
 export default UserProfile;
