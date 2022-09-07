@@ -8,6 +8,7 @@ import UserProfile from "./UserProfile";
 const WeaponIndex = (props) => {
   const loggedInUser = localStorage.getItem("username")
   const [weapons, setWeapons] = useState([]);
+  const [favorites, setFavorites] = useState([])
 
   
   useEffect(() => {
@@ -22,6 +23,12 @@ const WeaponIndex = (props) => {
       });
   }, [loggedInUser]);
   console.log(weapons);
+
+  const handleFavorites = (favorite) => {
+    const favoritedWeapon = setFavorites([`${weapons.name}`])
+    console.log(favoritedWeapon)
+      return setFavorites(favoritedWeapon)
+  }
 
   const handleSearch = (search) => {
     const filteredWeapons = weapons.filter((weapon, index) => {
@@ -52,6 +59,13 @@ const WeaponIndex = (props) => {
             <h3> Notable Wielder: {weapon.notable_wielder ? "Yes" : "No"}</h3>
             <h2> Description: {weapon.description}</h2>
             <h4> Submitted by: {loggedInUser}</h4>
+            <label htmlFor="favorite">Favorite this Weapon?</label>
+            <input 
+              type='checkbox'
+              id='favorite'
+              onChange={handleFavorites}
+              value={favorites}
+            />
           </div>
         );
       })}
